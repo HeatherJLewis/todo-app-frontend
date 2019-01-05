@@ -1,5 +1,6 @@
 import React from 'react';
 import Task from './Task';
+import TasksLeft from './TasksLeft';
 
 class TaskList extends React.Component {
     
@@ -9,12 +10,14 @@ class TaskList extends React.Component {
             "Feed Dog",
             "Feed Cat",
             "Feed Children",
-            "Feed the Parakeet"
+            "Feed the Llama",
+            "Feed Husband",
+            "Feed Pygmy Vine Bat"
                 ]
     
         return (
             <div>
-            <h1>You have {tasks.length} tasks remaining!</h1>
+            <TasksLeft tasks={tasks}/>
     {
         tasks.map((task, i) => 
        <Task taskDescription={task} key={i} />
