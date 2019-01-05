@@ -3,7 +3,7 @@ import React from 'react';
 class Header extends React.Component {
 
     render() {
-        return (<h1 style={styles.header}>To Do App</h1>);
+        return (<h1 style={styles.header}>Heather's To Do App</h1>);
     }
 
 }
@@ -12,9 +12,12 @@ const styles = {
     header : {
             color: "#FFAD4F",
             backgroundColor: "#1E3F63",
-            fontSize: "150px",
+            fontSize: "100px",
             fontFamily: "Cormorant Garamond",
             textAlign: "center",
+            borderRadius: "30%",
+            paddingTop : "30px",
+            paddingBottom : "30px",
         }
     };
 
@@ -25,4 +28,4 @@ export default Header;
 //     font-size: 150px;
 //     font-family: 'Cormorant Garamond', serif;
 //     text-align: center;
-//     border-radius: 30%;
+//     borderRadius: 30%;

@@ -11,6 +11,7 @@ class FlowerImage extends React.Component {
           alt={prettyFlower.alt}
           width={prettyFlower.width}
           height={prettyFlower.height}
+          imageAlign={prettyFlower.imageAlign}
         //   styles={styles}
            />
             </div>
@@ -20,11 +21,12 @@ class FlowerImage extends React.Component {
 };
 
 const prettyFlower = {
-        src: Flower,
+    src: Flower,
     alt: 'PrettyFlower',
-    width:"360px",
-    height:"360px",
+    width:"295px",
+    height:"295px",
     paddingTop : "10px",
     paddingBottom : "10px",
+    imageAlign: "center",
   };
 export default FlowerImage;
