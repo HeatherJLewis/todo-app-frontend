@@ -14,7 +14,15 @@ const styles = {
             backgroundColor: "#1E3F63",
             fontSize: "150px",
             fontFamily: "Cormorant Garamond",
+            textAlign: "center",
         }
     };
 
 export default Header;
+
+// color: #FFAD4F;
+//     background-color: #1E3F63;
+//     font-size: 150px;
+//     font-family: 'Cormorant Garamond', serif;
+//     text-align: center;
+//     border-radius: 30%;
