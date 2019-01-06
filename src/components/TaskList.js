@@ -7,20 +7,23 @@ class TaskList extends React.Component {
     render() {
     
         const tasks = [
-            "Feed Dog",
-            "Feed Cat",
-            "Feed Children",
-            "Feed the Llama",
-            "Feed Husband",
-            "Feed Pygmy Vine Bat"
-                ]
+            {
+                description : "Feed Dog"
+            },
+            {
+                description : "Feed Cat"
+            },
+            {
+                description : "Feed Llama"
+            },
+            ]
     
         return (
             <div>
             <TasksLeft tasks={tasks}/>
     {
         tasks.map((task, i) => 
-       <Task taskDescription={task} key={i} />
+       <Task taskDescription={task.description} key={i} />
        )}
            </div>
         );
