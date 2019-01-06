@@ -1,7 +1,13 @@
 import React from 'react';
 
 class TaskInput extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.onSubmitClicked = this.onSubmitClicked.bind(this);
+    }
+    onSubmitClicked() {
+        alert('Hello There');
+    }
     render() {
         return (
             <form>
@@ -12,7 +18,7 @@ class TaskInput extends React.Component {
                              <input type="taskAdd" className="form-control" id="taskToAdd" aria-describedby="taskAdd" placeholder="Add your next task here. Keep it SMART!" />
                           </div>
                           <div className="col-sm-1 col-md-1">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary" onClick={this.onSubmitClicked} >Submit</button>
                           </div>
                       </div>
                       </div>
@@ -24,6 +30,6 @@ class TaskInput extends React.Component {
 };
 const styles = {
     paddingTop : "10px",
-    paddingBottom : "10px"
+    paddingBottom : "10px",
 }
 export default TaskInput;
