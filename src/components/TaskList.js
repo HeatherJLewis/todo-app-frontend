@@ -8,13 +8,19 @@ class TaskList extends React.Component {
     
         const tasks = [
             {
-                description : "Feed Dog"
+                id : 1,
+                description : "Feed Dog",
+                completed : false
             },
             {
-                description : "Feed Cat"
+                id : 2,
+                description : "Feed Cat",
+                completed : false
             },
             {
-                description : "Feed Llama"
+                id : 3,
+                description : "Feed Llama",
+                completed : false
             },
             ]
     
