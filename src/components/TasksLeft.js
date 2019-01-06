@@ -9,6 +9,6 @@ class TasksLeft extends React.Component {
 const styles = {
     paddingTop : "10px",
     paddingBottom : "10px",
-    textAlign: "center"
+    textAlign: "center",
 }
 export default TasksLeft;

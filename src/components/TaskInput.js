@@ -14,7 +14,16 @@ class TaskInput extends React.Component {
     }
     //Function fires when Submit button clicked
     onSubmitClicked() {
-        alert(this.state.taskDescription);
+        const taskToBeAdded = {
+            id: (Math.random() * 100),
+            description: this.state.taskDescription,
+            completed: false
+        }
+        this.props.onSaveTaskHandler(taskToBeAdded);
+
+        this.setState({
+            taskDescription: ""
+        })
     }
 
     //Function fires when the text box is filled
@@ -34,7 +43,7 @@ class TaskInput extends React.Component {
                              <input type="text" value={this.state.taskDescription} className="form-control" placeholder="Add your next task here. Keep it SMART!" onChange={this.onTextFieldUpdated} />
                           </div>
                           <div className="col-sm-1 col-md-1">
-                            <button type="submit" className="btn btn-primary" onClick={this.onSubmitClicked} >Submit</button>
+                            <button type="button" className="btn btn-primary" onClick={this.onSubmitClicked} >Submit</button>
                           </div>
                       </div>
                       </div>
@@ -49,4 +58,4 @@ const styles = {
 }
 export default TaskInput;
 
-//  id="taskToAdd" aria-describedby="taskAdd"
+//  id="taskToAdd" aria-describedby="taskAdd" className="form-control"
