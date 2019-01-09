@@ -1,6 +1,16 @@
 import React from 'react';
+// import DoneButton from './DoneButton.js'
 
 class Task extends React.Component {
+
+    constructor(props) {
+        super(props);
+    this.onDoneClicked = this.onDoneClicked.bind(this);
+    }
+
+    onDoneClicked () {
+        alert('Well Done!');
+    }
 
     render() {
         return (
@@ -10,10 +20,10 @@ class Task extends React.Component {
                         {this.props.taskDescription}
                     </div>
                     <div className="col-6 col-sm-6 col-md-1">
-                        <input className="btn btn-success" type="submit" value="Done" />
+                    <input className="btn btn-success" type="submit" value="Done" onClick={this.onDoneClicked} />
                     </div>
                     <div className="col-6 col-sm-6 col-md-1">
-                        <input className="btn btn-primary" type="submit" value="Delete" />
+                        <input className="btn btn-primary" type="submit" value="Delete" onClick={this.onDoneClicked} />
                     </div>
                 </div>
             </div>
