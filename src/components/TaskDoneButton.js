@@ -7,15 +7,15 @@ class TaskDoneButton extends React.Component {
     this.onDoneClicked = this.onDoneClicked.bind(this);
     }
 
-    onDoneClicked () {
-        alert('Well Done!')
+    onDoneClicked (taskDescription) {
+        alert(`You have completed ${this.props.taskDescription}!`)
     }
 
     render() {
         return (
             <div>
                 <input className="btn btn-success" type="submit" value="Done" onClick={this.onDoneClicked} />
-            </div>
+                </div>
         );
     }
 

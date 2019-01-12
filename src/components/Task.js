@@ -1,17 +1,9 @@
 import React from 'react';
 import TaskDeleteButton from './TaskDeleteButton.js'
 import TaskDoneButton from './TaskDoneButton.js'
+import TasksLeft from './TasksLeft.js';
 
 class Task extends React.Component {
-
-    constructor(props) {
-        super(props);
-    this.onDoneClicked = this.onDoneClicked.bind(this);
-    }
-
-    onDoneClicked () {
-        alert('Well Done!');
-    }
 
     render() {
         return (
@@ -19,13 +11,13 @@ class Task extends React.Component {
                 <div className="row" style={styles}>
                     <div className="col-12 col-sm-12 col-md-10 border">
                         {this.props.taskDescription}
-                    </div>
-                    <div className="col-6 col-sm-6 col-md-1">
-                    <TaskDoneButton />
-                    </div>
+                        </div>
+                    <div className="col-6 col-sm-6 col-md-1" >
+                        <TaskDoneButton taskDescription={this.props.taskDescription}/>
+                        </div>
                     <div className="col-6 col-sm-6 col-md-1">
                         <TaskDeleteButton />
-                    </div>
+                        </div>
                 </div>
             </div>
         );
