@@ -1,5 +1,6 @@
 import React from 'react';
-// import DoneButton from './DoneButton.js'
+import TaskDeleteButton from './TaskDeleteButton.js'
+import TaskDoneButton from './TaskDoneButton.js'
 
 class Task extends React.Component {
 
@@ -20,10 +21,10 @@ class Task extends React.Component {
                         {this.props.taskDescription}
                     </div>
                     <div className="col-6 col-sm-6 col-md-1">
-                    <input className="btn btn-success" type="submit" value="Done" onClick={this.onDoneClicked} />
+                    <TaskDoneButton />
                     </div>
                     <div className="col-6 col-sm-6 col-md-1">
-                        <input className="btn btn-primary" type="submit" value="Delete" onClick={this.onDoneClicked} />
+                        <TaskDeleteButton />
                     </div>
                 </div>
             </div>

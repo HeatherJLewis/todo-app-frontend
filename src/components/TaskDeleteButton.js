@@ -8,7 +8,7 @@ class TaskDeleteButton extends React.Component {
     }
 
     onDeleteClicked () {
-        alert('Are you sure?');
+        alert('Are you sure?')
     }
 
     render() {
