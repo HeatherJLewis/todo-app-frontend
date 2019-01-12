@@ -1,10 +1,17 @@
 import React from 'react';
-import TaskDeleteButton from './TaskDeleteButton.js'
 import TaskDoneButton from './TaskDoneButton.js'
-import TasksLeft from './TasksLeft.js';
 
 class Task extends React.Component {
+    constructor(props) {
+        super(props)
 
+        this.onDeleteClicked = this.onDeleteClicked.bind(this);
+    }
+    onDeleteClicked() {
+        this.props.onDeleteTaskHandler(this.props.taskDescription);
+
+    }
+    
     render() {
         return (
             <div>
@@ -16,7 +23,7 @@ class Task extends React.Component {
                         <TaskDoneButton taskDescription={this.props.taskDescription}/>
                         </div>
                     <div className="col-6 col-sm-6 col-md-1">
-                        <TaskDeleteButton />
+                        <input className="btn btn-primary" type="submit" value="Delete" onClick={this.onDeleteClicked} />
                         </div>
                 </div>
             </div>

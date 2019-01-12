@@ -20,7 +20,6 @@ class TaskInput extends React.Component {
             completed: false
         }
         this.props.onSaveTaskHandler(taskToBeAdded);
-
         this.setState({
             taskDescription: ""
         })
@@ -29,10 +28,12 @@ class TaskInput extends React.Component {
     //Function fires when the text box is filled
     onTextFieldUpdated(event) {
         const description = event.target.value;
-        this.setState ({
+        {this.setState ({
                 taskDescription: description
         });
     }
+}
+
 
     render() {
         return (

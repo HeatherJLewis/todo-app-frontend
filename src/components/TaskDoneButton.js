@@ -7,7 +7,7 @@ class TaskDoneButton extends React.Component {
     this.onDoneClicked = this.onDoneClicked.bind(this);
     }
 
-    onDoneClicked (taskDescription) {
+    onDoneClicked () {
         alert(`You have completed ${this.props.taskDescription}!`)
     }
 
