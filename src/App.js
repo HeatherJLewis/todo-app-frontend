@@ -16,10 +16,10 @@ class App extends Component {
   }  
 
   addTask(task) {
-    let currentListOfTasks = this.state.tasks;
-    currentListOfTasks.push(task);
+    // let currentListOfTasks = this.state.tasks;
+    // currentListOfTasks.push(task);
     this.setState ({
-      tasks: currentListOfTasks
+      tasks: [...this.state.tasks, task]
     })
   }
 
