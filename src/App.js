@@ -13,7 +13,7 @@ class App extends Component {
       tasks: []
     };
     this.addTask = this.addTask.bind(this);
-    // this.taskDone = this.taskDone.bind(this);
+    this.taskDone = this.taskDone.bind(this);
   }  
 
   addTask(task) {

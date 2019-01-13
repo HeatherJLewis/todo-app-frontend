@@ -23,7 +23,8 @@ class TaskList extends React.Component {
             <Task 
             task={task}
             key={this.props.tasks.id}
-            onDoneClicked={() => this.onDoneClicked(this.props.tasks.id)} />
+            // onDoneClicked={() => this.onDoneClicked(this.props.tasks.id)} />
+            onDoneClicked={this.onDoneClicked} />
                 )}
            </div>
         );
