@@ -1,4 +1,6 @@
+
 import React from 'react';
+import shortid from 'shortid';
 
 class TaskInput extends React.Component {
     constructor(props) {
@@ -15,7 +17,7 @@ class TaskInput extends React.Component {
     //Function fires when Submit button clicked
     onSubmitClicked() {
         const taskToBeAdded = {
-            id: (Math.random() * 100),
+            id: shortid.generate,
             description: this.state.taskDescription,
             completed: false
         }
