@@ -13,13 +13,27 @@ class App extends Component {
       tasks: []
     };
     this.addTask = this.addTask.bind(this);
+    this.taskDone = this.taskDone.bind(this);
   }  
 
   addTask(task) {
-    // let currentListOfTasks = this.state.tasks;
-    // currentListOfTasks.push(task);
     this.setState ({
       tasks: [...this.state.tasks, task]
+    })
+  }
+
+  taskDone(id) {
+    this.setState ({
+      tasks: this.state.tasks.map(tasks => {
+        if (tasks.id === id) {
+          return {
+            ...tasks,
+            completed: !tasks.completed
+          }
+        } else {
+          return tasks;
+        }
+      })
     })
   }
 
@@ -37,7 +51,10 @@ class App extends Component {
         </div>
         <TaskInput onSaveTaskHandler={this.addTask}/>
         <p>Keep It Simple, Stupid</p>
-        <TaskList tasks={this.state.tasks} />
+        <TaskList 
+        tasks={this.state.tasks}
+        onDoneTaskHandler={this.taskDone}
+        />
       </div>
     );
   }

@@ -1,27 +1,27 @@
-import React from 'react';
+// import React from 'react';
 
-class TaskDoneButton extends React.Component {
+// class TaskDoneButton extends React.Component {
 
-    constructor(props) {
-        super(props);
-    this.onDoneClicked = this.onDoneClicked.bind(this);
-    }
+//     constructor(props) {
+//         super(props);
+//     this.onDoneClicked = this.onDoneClicked.bind(this);
+//     }
 
-    onDoneClicked () {
-        alert(`You have completed ${this.props.taskDescription}!`)
-    }
+//     onDoneClicked () {
+//         alert(`You have completed ${this.props.taskDescription}!`)
+//     }
 
-    render() {
-        return (
-            <div>
-                <input className="btn btn-success" type="submit" value="Done" onClick={this.onDoneClicked} />
-                </div>
-        );
-    }
+//     render() {
+//         return (
+//             <div>
+//                 <input className="btn btn-success" type="submit" value="Done" onClick={this.onDoneClicked} />
+//                 </div>
+//         );
+//     }
 
-};
-const styles = {
-    paddingTop : "10px",
-    paddingBottom : "10px"
-}
-export default TaskDoneButton;
+// };
+// const styles = {
+//     paddingTop : "10px",
+//     paddingBottom : "10px"
+// }
+// export default TaskDoneButton;

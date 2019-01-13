@@ -19,7 +19,7 @@ class TaskInput extends React.Component {
         const taskToBeAdded = {
             id: shortid.generate,
             description: this.state.taskDescription,
-            completed: false
+            completed: true
         }
         this.props.onSaveTaskHandler(taskToBeAdded);
         this.setState({
