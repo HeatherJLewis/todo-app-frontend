@@ -4,20 +4,17 @@ import TaskDoneButton from './TaskDoneButton.js'
 class Task extends React.Component {
     constructor(props) {
         super(props)
-        
+        this.handleDoneClick=this.handleDoneClick.bind(this);
         // this.onDeleteClicked = this.onDeleteClicked.bind(this);
     }
     // onDeleteClicked() {
     //     this.props.onDeleteTaskHandler(this.props.taskDescription);
 
     // }    
-    handleDoneClick() {
-        this.props.onDoneClicked();
+    handleDoneClick(event) {
+        this.props.onDoneClicked(event);
+        // alert(this.props.taskDescription);
     }
-  
-  
-  
-  
     render() {
         return (
             <div>
