@@ -17,7 +17,7 @@ class TaskInput extends React.Component {
     //Function fires when Submit button clicked
     onSubmitClicked() {
         const taskToBeAdded = {
-            id: shortid.generate,
+            id: shortid.generate(),
             description: this.state.taskDescription,
             completed: true
         }
