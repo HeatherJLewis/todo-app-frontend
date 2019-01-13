@@ -12,16 +12,19 @@ class Task extends React.Component {
 
     // }    
     handleDoneClick(event) {
-        this.props.onDoneClicked(event);
+
+        // Pass the task ID over to the done method
+        // in order to correctly locate the task and mark it as done.
+        this.props.onDoneClicked(this.props.task.id);
         // alert(this.props.taskDescription);
     }
     render() {
         return (
             <div>
                 <div className="row" style={styles}>
-                    <div className="col-12 col-sm-12 col-md-10 border" style={{textDecoration: this.props.tasks.completed ? "line-through" : ""}}>
-                        {this.props.taskDescription}
-                        </div>
+                    <div className="col-12 col-sm-12 col-md-10 border" style={{textDecoration: this.props.task.completed ? "line-through" : ""}}>
+                        {this.props.task.description}
+                    </div>
                     <div className="col-6 col-sm-6 col-md-1" >
                         <input className="btn btn-success" type="submit" value="Done" onClick={this.handleDoneClick} />
                         </div>
