@@ -2,8 +2,8 @@ import React from 'react';
 
 class TasksLeft extends React.Component {
 
-    render() {
-        return <h1 styles={styles}>You have {this.props.tasks.length} tasks remaining!</h1>
+    render() {       
+        return <h1 styles={styles}>You have {this.props.tasks.length} {this.props.tasks.length !== 1 ? "tasks" : "task"} remaining!</h1>
     }
 }
 const styles = {
