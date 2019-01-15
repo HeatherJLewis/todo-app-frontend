@@ -10,10 +10,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      tasks: []
+      tasks: [],
+      tasksToDo: []
     };
     this.addTask = this.addTask.bind(this);
     this.taskDone = this.taskDone.bind(this);
+    this.tasksYetToDo = this.tasksYetToDo.bind(this);
   }  
 
   addTask(task) {
@@ -38,6 +40,12 @@ class App extends Component {
     })
   }
 
+  tasksYetToDo(task) {
+      this.setState ({
+        tasksToDo: this.state.tasks.filter(task => tasks.completed != false)
+    });
+  }
+
   render() {
     return (
       <div className="container" style={styles}>
@@ -54,7 +62,9 @@ class App extends Component {
         <p>Keep It Simple, Stupid</p>
         <TaskList 
         tasks={this.state.tasks}
+        tasksToDo={this.state.tasksToDo}
         onDoneTaskHandler={this.taskDone}
+        tasksLeftHandler={this.tasksYetToDo}
         />
       </div>
     );
