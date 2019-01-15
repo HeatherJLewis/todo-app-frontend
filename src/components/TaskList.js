@@ -6,27 +6,32 @@ class TaskList extends React.Component {
     constructor(props) {
         super(props)
 
-        // this.onDeleteTaskHandler = this.onDeleteTaskHandler.bind(this);
         this.onDoneClicked = this.onDoneClicked.bind(this);
+        // this.taskCompleteClicked = this.taskCompleteClicked.bind(this);
 
     }
-    // onDeleteTaskHandler(taskDescription) {
-    //     this.props.deleteTask();
-    // }
-    onDoneClicked(taskId) {
-        this.props.onDoneTaskHandler(taskId);
-    }
+    onDoneClicked(taskId) {                        
+        this.props.onDoneTaskHandler(taskId)
+        // alert(this.props.description)
+    };
+
+    // taskCompleteClicked() {
+    //     this.props.tasksLeftHandler()
+    // };
 
     render() {
     
         return (
             <div>
-            <TasksLeft tasks={this.props.tasks}/>
+            <TasksLeft tasksToDo={this.props.tasksToDo}/>
                 {this.props.tasks.map((task, i) => 
             <Task 
-                task={task} 
-                key={this.props.tasks.id}
-                onDoneClicked={this.onDoneClicked} />
+            task={task}
+            key={this.props.tasks.id}
+            // onDoneClicked={() => this.onDoneClicked(this.props.tasks.id)} />
+            onDoneClicked={this.onDoneClicked}
+            // taskCompleteClicked={taskCompleteClicked}
+            />
                 )}
            </div>
         );

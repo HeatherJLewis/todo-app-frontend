@@ -16,6 +16,9 @@ class TaskInput extends React.Component {
     }
     //Function fires when Submit button clicked
     onSubmitClicked() {
+        if (this.state.taskDescription === "") {
+            alert("You need to add a task")
+        } else {
         const taskToBeAdded = {
             id: shortid.generate(),
             description: this.state.taskDescription,
@@ -26,8 +29,9 @@ class TaskInput extends React.Component {
             taskDescription: ""
         })
     }
+}
 
-    //Function fires when the text box is filled
+    // Function fires when the text box is filled
     onTextFieldUpdated(event) {
         const description = event.target.value;
         {this.setState ({
@@ -35,7 +39,6 @@ class TaskInput extends React.Component {
         });
     }
 }
-
 
     render() {
         return (
@@ -46,7 +49,7 @@ class TaskInput extends React.Component {
                              <input type="text" value={this.state.taskDescription} className="form-control" placeholder="Add your next task here. Keep it SMART!" onChange={this.onTextFieldUpdated} />
                           </div>
                           <div className="col-sm-1 col-md-1">
-                            <button type="button" className="btn btn-primary" onClick={this.onSubmitClicked} >Submit</button>
+                            <button type="submit" className="btn btn-primary" onClick={this.onSubmitClicked} >Submit</button>
                           </div>
                       </div>
                       </div>
