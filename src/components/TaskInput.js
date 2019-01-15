@@ -40,18 +40,6 @@ class TaskInput extends React.Component {
     }
 }
 
-//     onTextFieldUpdated(event) {
-//         const description = event.target.value;
-//         if (description === "") {
-//             alert("You need to add some text")
-//         } else {
-//             {this.setState ({
-//             taskDescription: description
-//             });
-//         }
-//     }
-// }
-
     render() {
         return (
                 <div className="form-group">

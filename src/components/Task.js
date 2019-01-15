@@ -5,16 +5,22 @@ class Task extends React.Component {
     constructor(props) {
         super(props)
         this.handleDoneClick=this.handleDoneClick.bind(this);
+        // this.handleCompleteClick=this.handleCompleteClick.bind(this);
+
         // this.onDeleteClicked = this.onDeleteClicked.bind(this);
     }
     // onDeleteClicked() {
     //     this.props.onDeleteTaskHandler(this.props.taskDescription);
 
     // }    
-    handleDoneClick(event) {
+    handleDoneClick() {
         this.props.onDoneClicked(this.props.task.id);
-        // alert(this.props.taskDescription);
     }
+    
+    // handleCompleteClick() {
+    //     this.props.taskCompleteClicked();
+    //     // alert(this.props.taskDescription);
+    // }
     render() {
         return (
             <div>
@@ -23,7 +29,7 @@ class Task extends React.Component {
                         {this.props.task.description}
                         </div>
                     <div className="col-6 col-sm-6 col-md-1" >
-                        <input className="btn btn-success" type="submit" value="Done" onClick={this.handleDoneClick} />
+                        <input className="btn btn-success" type="submit" value="Done" onClick={this.handleDoneClick}  />
                         </div>
                     <div className="col-6 col-sm-6 col-md-1">
                         <input className="btn btn-primary" type="submit" value="Delete" onClick={this.onDeleteClicked} />
@@ -39,3 +45,6 @@ const styles = {
     paddingBottom : "10px"
 }
 export default Task;
+
+
+// onClick={this.handleCompleteClick}
