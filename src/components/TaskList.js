@@ -23,7 +23,7 @@ class TaskList extends React.Component {
     
         return (
             <div>
-            <TasksLeft tasksToDo={this.props.tasksToDo}/>
+            <TasksLeft tasks={this.props.tasks}/>
                 {this.props.tasks.map((task, i) => 
             <Task 
             task={task}
