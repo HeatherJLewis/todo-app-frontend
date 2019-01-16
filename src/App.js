@@ -14,6 +14,8 @@ class App extends Component {
     };
     this.addTask = this.addTask.bind(this);
     this.taskDone = this.taskDone.bind(this);
+    this.taskDelete = this.taskDelete.bind(this);
+
   }  
 
   addTask(task) {
@@ -37,6 +39,14 @@ class App extends Component {
       })
     })
   }
+//I want to filter through the tasks array and filter every task not equal to the id of the task I am deleting into a new array and set that equal
+//the state.
+  taskDelete(id) {
+    this.setState ({
+      tasks: this.state.tasks.filter(tasks => tasks.id !== id)
+        });
+      };
+
 
   render() {
     return (
@@ -55,6 +65,7 @@ class App extends Component {
         <TaskList 
         tasks={this.state.tasks}
         onDoneTaskHandler={this.taskDone}
+        onDeleteTaskHandler={this.taskDelete}
         />
       </div>
     );

@@ -7,11 +7,16 @@ class TaskList extends React.Component {
         super(props)
 
         this.onDoneClicked = this.onDoneClicked.bind(this);
-
+        this.onDeleteClicked = this.onDeleteClicked.bind(this);
     }
     onDoneClicked(taskId) {                        
         this.props.onDoneTaskHandler(taskId)
     };
+
+    onDeleteClicked(taskId) {                        
+        this.props.onDeleteTaskHandler(taskId)
+    };
+
 
     render() {
     
@@ -19,10 +24,12 @@ class TaskList extends React.Component {
             <div>
             <TasksLeft tasks={this.props.tasks}/>
                 {this.props.tasks.map((task, i) => 
-            <Task 
+            <Task
+            tasks={this.props.tasks} 
             task={task}
             key={this.props.tasks.id}
             onDoneClicked={this.onDoneClicked}
+            onDeleteClicked={this.onDeleteClicked}
             />
                 )}
            </div>

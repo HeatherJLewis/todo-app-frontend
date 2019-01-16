@@ -5,16 +5,17 @@ class Task extends React.Component {
     constructor(props) {
         super(props)
         this.handleDoneClick=this.handleDoneClick.bind(this);
-
-        // this.onDeleteClicked = this.onDeleteClicked.bind(this);
+        this.handleDeleteClick=this.handleDeleteClick.bind(this);
     }
-    // onDeleteClicked() {
-    //     this.props.onDeleteTaskHandler(this.props.taskDescription);
 
-    // }    
     handleDoneClick() {
         this.props.onDoneClicked(this.props.task.id);
     }
+
+    handleDeleteClick() {
+        this.props.onDeleteClicked(this.props.task.id);
+    }
+
     
     render() {
         return (
@@ -27,7 +28,7 @@ class Task extends React.Component {
                         <input className="btn btn-success" type="submit" value="Done" onClick={this.handleDoneClick}  />
                         </div>
                     <div className="col-6 col-sm-6 col-md-1">
-                        <input className="btn btn-primary" type="submit" value="Delete" onClick={this.onDeleteClicked} />
+                        <input className="btn btn-primary" type="submit" value="Delete" onClick={this.handleDeleteClick} />
                         </div>
                 </div>
             </div>
