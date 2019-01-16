@@ -5,7 +5,6 @@ class Task extends React.Component {
     constructor(props) {
         super(props)
         this.handleDoneClick=this.handleDoneClick.bind(this);
-        // this.handleCompleteClick=this.handleCompleteClick.bind(this);
 
         // this.onDeleteClicked = this.onDeleteClicked.bind(this);
     }
@@ -17,10 +16,6 @@ class Task extends React.Component {
         this.props.onDoneClicked(this.props.task.id);
     }
     
-    // handleCompleteClick() {
-    //     this.props.taskCompleteClicked();
-    //     // alert(this.props.taskDescription);
-    // }
     render() {
         return (
             <div>
@@ -45,6 +40,3 @@ const styles = {
     paddingBottom : "10px"
 }
 export default Task;
-
-
-// onClick={this.handleCompleteClick}

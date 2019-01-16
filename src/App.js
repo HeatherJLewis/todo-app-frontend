@@ -11,11 +11,9 @@ class App extends Component {
 
     this.state = {
       tasks: [],
-      tasksToDo: []
     };
     this.addTask = this.addTask.bind(this);
     this.taskDone = this.taskDone.bind(this);
-    // this.tasksYetToDo = this.tasksYetToDo.bind(this);
   }  
 
   addTask(task) {
@@ -38,16 +36,7 @@ class App extends Component {
         }
       })
     })
-    this.setState ({
-      tasksToDo: this.state.tasks.filter(tasks => tasks.completed != false)
-  });
   }
-
-  // tasksYetToDo(tasks) {
-  //     this.setState ({
-  //       tasksToDo: this.state.tasks.filter(tasks => tasks.completed != false)
-  //   });
-  // }
 
   render() {
     return (
@@ -65,9 +54,7 @@ class App extends Component {
         <p>Keep It Simple, Stupid</p>
         <TaskList 
         tasks={this.state.tasks}
-        tasksToDo={this.state.tasksToDo}
         onDoneTaskHandler={this.taskDone}
-        // tasksLeftHandler={this.tasksYetToDo}
         />
       </div>
     );

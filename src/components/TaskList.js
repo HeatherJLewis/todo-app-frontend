@@ -7,30 +7,22 @@ class TaskList extends React.Component {
         super(props)
 
         this.onDoneClicked = this.onDoneClicked.bind(this);
-        // this.taskCompleteClicked = this.taskCompleteClicked.bind(this);
 
     }
     onDoneClicked(taskId) {                        
         this.props.onDoneTaskHandler(taskId)
-        // alert(this.props.description)
     };
-
-    // taskCompleteClicked() {
-    //     this.props.tasksLeftHandler()
-    // };
 
     render() {
     
         return (
             <div>
-            <TasksLeft tasksToDo={this.props.tasksToDo}/>
+            <TasksLeft tasks={this.props.tasks}/>
                 {this.props.tasks.map((task, i) => 
             <Task 
             task={task}
             key={this.props.tasks.id}
-            // onDoneClicked={() => this.onDoneClicked(this.props.tasks.id)} />
             onDoneClicked={this.onDoneClicked}
-            // taskCompleteClicked={taskCompleteClicked}
             />
                 )}
            </div>
