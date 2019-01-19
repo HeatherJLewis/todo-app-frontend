@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# todo-app version 1.0.0
+
+This app enables the user to: record a list of tasks, edit the list to show which have been done and delete tasks which are no longer live. Blank submission in prevented and a counter displays the number of tasks remaining.
+
+
+## Built With
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -66,3 +72,24 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Contributing
+
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/HeatherJLewis/todo-app-frontend). 
+
+## Authors
+
+* **Heather Lewis** - (https://github.com/HeatherJLewis)
+
+See also the list of [James Heggs](https://github.com/HeatherJLewis/todo-app-frontend) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Thanks to Tech Returners: James Heggs and Beckie Taylor for teaching me how to create this app.
