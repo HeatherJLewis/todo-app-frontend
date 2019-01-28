@@ -66,3 +66,9 @@ SELECT *
 FROM Tasks
 WHERE UserId = 2 AND Completed = 'false';
 
+//Creating a table which joins the name from one table to their tasks in the tasks table and 
+//displays only the username and their tasks which need completing
+SELECT Username, Description
+FROM User
+CROSS JOIN Tasks
+WHERE User.UserId = Tasks.UserId AND Tasks.Completed = 'false';
