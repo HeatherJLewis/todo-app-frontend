@@ -3,6 +3,7 @@ import Header from './components/Header';
 import TaskList from './components/TaskList';
 import TaskInput from './components/TaskInput';
 import FlowerImage from './components/FlowerImage';
+import TasksService from './service/tasks';
 
 class App extends Component {
 
@@ -18,7 +19,18 @@ class App extends Component {
 
   }  
 
-  addTask(task) {
+  async componentDidMount() {
+    const tasks = await TasksService.getTasks();
+    console.log(tasks);
+    this.setState({tasks: tasks});
+ }
+
+  async addTask(task) {
+
+    const response = await TasksService.saveTask(task);
+    console.log(response);
+    task.taskId = response.insertId;
+
     this.setState ({
       tasks: [...this.state.tasks, task]
     })
@@ -56,7 +68,7 @@ class App extends Component {
             <div className="col-md-12 col-lg-8">
               <Header />
             </div>
-            <div class="col-lg-4 d-none d-lg-block">
+            <div className="col-lg-4 d-none d-lg-block">
               <FlowerImage />
             </div>
         </div>

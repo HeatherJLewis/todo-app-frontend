@@ -25,9 +25,10 @@ class TaskList extends React.Component {
             <TasksLeft tasks={this.props.tasks}/>
                 {this.props.tasks.map((task, i) => 
             <Task
+            taskId={task.taskId}
             tasks={this.props.tasks} 
             task={task}
-            key={this.props.tasks.id}
+            key={this.props.taskId}
             onDoneClicked={this.onDoneClicked}
             onDeleteClicked={this.onDeleteClicked}
             />

@@ -1,6 +1,4 @@
-
 import React from 'react';
-import shortid from 'shortid';
 
 class TaskInput extends React.Component {
     constructor(props) {
@@ -20,8 +18,7 @@ class TaskInput extends React.Component {
             alert("You need to add a task")
         } else {
         const taskToBeAdded = {
-            id: shortid.generate(),
-            description: this.state.taskDescription,
+            taskDescription: this.state.taskDescription,
             completed: false
         }
         this.props.onSaveTaskHandler(taskToBeAdded);
