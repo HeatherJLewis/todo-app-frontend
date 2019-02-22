@@ -40,7 +40,7 @@ class App extends Component {
   taskDone(id) {
     this.setState ({
       tasks: this.state.tasks.map(tasks => {
-        if (tasks.id === id) {
+        if (tasks.taskId === id) {
           return {
             ...tasks,
             completed: !tasks.completed
@@ -55,7 +55,7 @@ class App extends Component {
 //the state.
   taskDelete(id) {
     this.setState ({
-      tasks: this.state.tasks.filter(tasks => tasks.id !== id)
+      tasks: this.state.tasks.filter(tasks => tasks.taskId !== id)
         });
       };
 
