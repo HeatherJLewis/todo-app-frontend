@@ -9,11 +9,11 @@ class Task extends React.Component {
     }
 
     handleDoneClick() {
-        this.props.onDoneClicked(this.props.task.id);
+        this.props.onDoneClicked(this.props.task.taskId);
     }
 
     handleDeleteClick() {
-        this.props.onDeleteClicked(this.props.task.id);
+        this.props.onDeleteClicked(this.props.task.taskId);
     }
 
     
