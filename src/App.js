@@ -12,7 +12,9 @@ class App extends Component {
 
     this.state = {
       tasks: [],
+      tasksLeft: 0
     };
+
     this.addTask = this.addTask.bind(this);
     this.taskDone = this.taskDone.bind(this);
     this.taskDelete = this.taskDelete.bind(this);
@@ -23,6 +25,10 @@ class App extends Component {
     const tasks = await TasksService.getTasks();
     // console.log(tasks);
     this.setState({ tasks: tasks });
+
+    const tasksStillLeft = await TasksService.getTasksLeft();
+    console.log(tasksStillLeft);
+    this.setState({tasksLeft: tasksStillLeft})
   }
 
   async addTask(task) {
@@ -63,6 +69,11 @@ class App extends Component {
     });
 };
 
+  // async tasksLeftToDo() {
+  //   const tasksStillLeft = await TasksService.getTasksLeft();
+  //   console.log(tasksStillLeft);
+  //   this.setState({tasksLeft: tasksStillLeft})
+  // };
 
   render() {
     return (
@@ -80,6 +91,7 @@ class App extends Component {
         <p>Keep It Simple, Stupid</p>
         <TaskList
           tasks={this.state.tasks}
+          tasksLeft={this.state.tasksLeft}
           onDoneTaskHandler={this.taskDone}
           onDeleteTaskHandler={this.taskDelete}
         />

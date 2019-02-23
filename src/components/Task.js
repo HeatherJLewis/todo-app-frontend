@@ -22,7 +22,7 @@ class Task extends React.Component {
             <div>
                 <div className="row" style={styles}>
                     <div className="col-12 col-sm-12 col-md-10 border" style={{textDecoration: this.props.task.taskCompleted ? "line-through" : ""}}>
-                        {this.props.taskId} - {this.props.task.taskDescription}
+                        {this.props.task.taskDescription}
                         </div>
                     <div className="col-6 col-sm-6 col-md-1" >
                         <input className="btn btn-success" type="submit" value="Done" onClick={this.handleDoneClick}  />

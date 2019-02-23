@@ -6,14 +6,14 @@ class TasksLeft extends React.Component {
     render() {
 
     // Work out how many of the tasks are left to complete
-        let tasksRemaining = 0;
-        for(let task of this.props.tasks) {
-            if(task.taskCompleted === false) {
-                tasksRemaining++;
-            }
-        };
+        // let tasksRemaining = 0;
+        // for(let task of this.props.tasks) {
+        //     if(task.taskCompleted === false) {
+        //         tasksRemaining++;
+        //     }
+        // };
     
-        return <h1 styles={styles}>You have <Pluralize singular={'task'} zero={"no tasks"} count={tasksRemaining} /> remaining!</h1>
+        return <h1 styles={styles}>You have <Pluralize singular={'task'} zero={"no tasks"} count={this.props.tasksLeft} /> remaining!</h1>
     }
 }
 const styles = {

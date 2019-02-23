@@ -6,6 +6,13 @@ const TasksService = {
         let data = await res.data;
         return data;
     },
+
+    async getTasksLeft() {
+        let res = await axios.get("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/taskstodo");
+        let data = await res.data;
+        return data;
+    },
+
     async saveTask(task){
         let res = await axios.post("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/", task);
         return res.data;

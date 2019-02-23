@@ -22,7 +22,7 @@ class TaskList extends React.Component {
     
         return (
             <div>
-            <TasksLeft tasks={this.props.tasks}/>
+            <TasksLeft tasksLeft={this.props.tasksLeft}/>
                 {this.props.tasks.map((task, i) => 
             <Task
             taskId={task.taskId}
