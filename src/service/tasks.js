@@ -10,9 +10,10 @@ const TasksService = {
         let res = await axios.post("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/", task);
         return res.data;
     },
+
     async updateTask(taskId){
         let res = await axios.put("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/{taskId}", taskId);
-        return res;
+        return res.data;
     }
  };
  

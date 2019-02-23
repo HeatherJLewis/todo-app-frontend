@@ -37,11 +37,15 @@ class App extends Component {
   }
   //I want to iterate through to find the id that matches with the task I want to delete and set the completed status to true
   //Id needs to come from tasks.id and needs to be drawn from the taskList component
+
   async taskDone(taskId) {
-    // console.log(taskId);
+    //I know I'm retrieving the correct taskId:
+    console.log(taskId);
+    //I'm sending this taskId to the backend so that I can update the database.
+    //I know the backend works because I've tested it with postman.
+    //Somehow, my taskId is not getting to the API, if it did it should work as per postman. 
     const tasks = await TasksService.updateTask(taskId);
-    // console.log(response);
-    // taskId = response.insertId;
+    //This shows I'm not affecting a change when viewed in console: 
     console.log(tasks);
     this.setState({
       tasks: this.state.tasks.map(tasks => {
