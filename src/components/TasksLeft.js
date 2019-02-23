@@ -8,7 +8,7 @@ class TasksLeft extends React.Component {
     // Work out how many of the tasks are left to complete
         let tasksRemaining = 0;
         for(let task of this.props.tasks) {
-            if(task.completed === false) {
+            if(task.taskCompleted === false) {
                 tasksRemaining++;
             }
         };

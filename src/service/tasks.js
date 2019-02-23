@@ -7,7 +7,7 @@ const TasksService = {
         return data;
     },
     async saveTask(task){
-        let res = await axios.post("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks");
+        let res = await axios.post("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks", task);
         return res;
     }
  };

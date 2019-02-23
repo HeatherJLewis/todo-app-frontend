@@ -28,7 +28,7 @@ class App extends Component {
   async addTask(task) {
 
     const response = await TasksService.saveTask(task);
-    console.log(response);
+    // console.log(response);
     task.taskId = response.insertId;
 
     this.setState ({
@@ -37,13 +37,13 @@ class App extends Component {
   }
 //I want to iterate through to find the id that matches with the task I want to delete and set the completed status to true
 //Id needs to come from tasks.id and needs to be drawn from the taskList component
-  taskDone(id) {
+  taskDone(taskId) {
     this.setState ({
       tasks: this.state.tasks.map(tasks => {
-        if (tasks.taskId === id) {
+        if (tasks.taskId === taskId) {
           return {
             ...tasks,
-            completed: !tasks.completed
+            taskCompleted: !tasks.taskCompleted
           }
         } else {
           return tasks;
@@ -53,9 +53,9 @@ class App extends Component {
   }
 //I want to filter through the tasks array and filter every task not equal to the id of the task I am deleting into a new array and set that equal
 //the state.
-  taskDelete(id) {
+  taskDelete(taskId) {
     this.setState ({
-      tasks: this.state.tasks.filter(tasks => tasks.taskId !== id)
+      tasks: this.state.tasks.filter(tasks => tasks.taskId !== taskId)
         });
       };
 

@@ -18,9 +18,11 @@ class TaskInput extends React.Component {
             alert("You need to add a task")
         } else {
         const taskToBeAdded = {
+            // taskId: "",
             taskDescription: this.state.taskDescription,
-            completed: false
+            taskCompleted: false
         }
+        console.log(taskToBeAdded);
         this.props.onSaveTaskHandler(taskToBeAdded);
         this.setState({
             taskDescription: ""
