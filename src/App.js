@@ -39,14 +39,8 @@ class App extends Component {
   //Id needs to come from tasks.id and needs to be drawn from the taskList component
 
   async taskDone(taskId) {
-    //I know I'm retrieving the correct taskId:
-    console.log(taskId);
-    //I'm sending this taskId to the backend so that I can update the database.
-    //I know the backend works because I've tested it with postman.
-    //Somehow, my taskId is not getting to the API, if it did it should work as per postman. 
-    const tasks = await TasksService.updateTask(taskId);
-    //This shows I'm not affecting a change when viewed in console: 
-    console.log(tasks);
+    const response = await TasksService.updateTask(taskId);
+
     this.setState({
       tasks: this.state.tasks.map(tasks => {
         if (tasks.taskId === taskId) {
@@ -60,13 +54,14 @@ class App extends Component {
       })
     })
   }
-  //I want to filter through the tasks array and filter every task not equal to the id of the task I am deleting into a new array and set that equal
-  //the state.
-  taskDelete(taskId) {
+
+  async taskDelete(taskId) {
+    const response = await TasksService.deleteTask(taskId);
+
     this.setState({
       tasks: this.state.tasks.filter(tasks => tasks.taskId !== taskId)
     });
-  };
+};
 
 
   render() {

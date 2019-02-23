@@ -12,7 +12,12 @@ const TasksService = {
     },
 
     async updateTask(taskId){
-        let res = await axios.put("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/{taskId}", taskId);
+        let res = await axios.put("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + taskId);
+        return res.data;
+    },
+
+    async deleteTask(taskId){
+        let res = await axios.delete("https://278nggy6rg.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + taskId);
         return res.data;
     }
  };
