@@ -6,6 +6,15 @@ This app enables the user to: record a list of tasks, edit the list to show whic
 ## Built With
 * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependencies
+'Axios'
+
+npm install axios
+
+'Node'
+
+npm install npm@latest -g
+
 ## Available Scripts
 
 In the project directory, you can run:
